@@ -35,9 +35,9 @@ class DB
 	public $querycount = 0;
 
 
-	private $retryAttempt = 0; // 失败重试次数
+	private $retryAttempt = 0;
 	const AUTO_RECONNECT = true;
-	const RETRY_ATTEMPTS = 3; // 最大失败重试次数
+	const RETRY_ATTEMPTS = 3;
 
     /**
      * DB constructor.
@@ -86,14 +86,7 @@ class DB
                     PDO::MYSQL_ATTR_FOUND_ROWS => true
 				)
 			);
-			/*
-			//For PHP 5.3.6 or lower
-			$this->pdo->setAttribute(PDO::MYSQL_ATTR_INIT_COMMAND, 'SET NAMES utf8');
-			$this->pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-			$this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			//$this->pdo->setAttribute(PDO::ATTR_PERSISTENT, true);//长连接
-			$this->pdo->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, true);
-			*/
+
 			$this->connectionStatus = true;
 			
 		}
