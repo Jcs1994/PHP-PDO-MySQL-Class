@@ -11,12 +11,10 @@
  * 
  * A PHP MySQL PDO class similar to the the Python MySQLdb. 
  */
-require(__DIR__ . '/PDO.Log.class.php');
 require(__DIR__ . '/PDO.Iterator.class.php');
 /** Class DB
  * @property PDO pdo PDO object
  * @property PDOStatement sQuery PDOStatement
- * @property PDOLog PDOLog logObject
  */
 class DB
 {
@@ -28,16 +26,10 @@ class DB
 	private $pdo;
 	private $sQuery;
 	private $connectionStatus = false;
-	private $logObject;
 	private $parameters;
 	public $rowCount   = 0;
 	public $columnCount   = 0;
 	public $querycount = 0;
-
-
-	private $retryAttempt = 0;
-	const AUTO_RECONNECT = true;
-	const RETRY_ATTEMPTS = 3;
 
     /**
      * DB constructor.
