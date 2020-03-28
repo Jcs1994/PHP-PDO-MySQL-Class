@@ -60,12 +60,12 @@ class DB
 			if (!empty($this->DBName)) {
 				$dsn .= 'dbname=' . $this->DBName . ';';
 			}
-			$dsn .= 'charset=utf8;';
+			$dsn .= 'charset=utf8mb4;';
 			$this->pdo = new PDO($dsn,
 				$this->DBUser, 
 				$this->DBPassword,
 				array(
-					PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8",
+					PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8mb4",
 					PDO::ATTR_EMULATE_PREPARES => false,
 
 					PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
